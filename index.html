@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edu Genie – Your Gemini-powered study helper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="lamp" aria-hidden="true">🪔</span>
+        <span class="brand-name">Edu Genie</span>
+      </div>
+
+      <button class="new-chat" type="button">New question</button>
+
+      <nav aria-label="Subjects">
+        <h2 class="side-title">Subjects</h2>
+        <ul class="subjects">
+          <li><a href="#" class="active">Maths</a></li>
+          <li><a href="#">Science</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Coding</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Recent">
+        <h2 class="side-title">Recent</h2>
+        <ul class="recent">
+          <li><a href="#">Explain photosynthesis</a></li>
+          <li><a href="#">Solve quadratic equations</a></li>
+          <li><a href="#">Essay on World War II</a></li>
+        </ul>
+      </nav>
+
+      <p class="powered">Powered by Google Gemini</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" type="button" aria-label="Open menu"
+                onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+        <h1 class="page-title">What do you want to learn today?</h1>
+        <div class="mode" role="group" aria-label="Learning mode">
+          <button type="button" class="mode-btn active">Explain</button>
+          <button type="button" class="mode-btn">Quiz me</button>
+          <button type="button" class="mode-btn">Summarise</button>
+        </div>
+      </header>
+
+      <section class="chat" id="chat" aria-live="polite">
+        <div class="suggestions">
+          <button type="button" class="chip">Explain gravity like I'm 12</button>
+          <button type="button" class="chip">Make a 5-question quiz on fractions</button>
+          <button type="button" class="chip">Summarise the French Revolution</button>
+          <button type="button" class="chip">Help me debug my Python loop</button>
+        </div>
+
+        <article class="msg user">
+          <p>Why is the sky blue?</p>
+        </article>
+
+        <article class="msg genie">
+          <span class="avatar" aria-hidden="true">🪔</span>
+          <div class="bubble">
+            <p>Sunlight contains every colour. As it passes through the air, tiny gas molecules scatter blue light much more than red light, so blue reaches your eyes from every direction.</p>
+            <p class="follow">Want a quick quiz on this?</p>
+          </div>
+        </article>
+      </section>
+
+      <form class="composer" id="composer" onsubmit="return false;">
+        <button type="button" class="icon-btn" aria-label="Attach a file">📎</button>
+        <input type="text" id="prompt" placeholder="Ask Edu Genie anything…" autocomplete="off" />
+        <button type="submit" class="send" id="send">Ask</button>
+      </form>
+      <p class="note">Edu Genie can make mistakes. Check important facts.</p>
+    </main>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
